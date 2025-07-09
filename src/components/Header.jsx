@@ -33,7 +33,6 @@ export default function Header() {
       <AppBar
         position="fixed"
         sx={{ background: "linear-gradient(to right, #66BDB5, #4a7c80)" }}>
-
         <Toolbar>
           <Typography
             variant="h6"
@@ -46,6 +45,7 @@ export default function Header() {
               textDecoration: "none",
               cursor: "pointer",
             }}>
+
             ViajeMais
           </Typography>
 
@@ -65,11 +65,18 @@ export default function Header() {
                 onClose={() => setDrawerOpen(false)}>
 
                 <Box
-                  sx={{ width: 200 }}
+                  sx={{
+                    width: 200,
+                    height: "100vh",
+                    bgcolor: "#66BDB5",
+                    color: "#fff",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
                   role="presentation"
                   onClick={() => setDrawerOpen(false)}
                   onKeyDown={() => setDrawerOpen(false)}>
-                    
+
                   <List>
                     {navLinks.map(({ title, path }) => (
                       <ListItem button key={title} component={Link} to={path}>

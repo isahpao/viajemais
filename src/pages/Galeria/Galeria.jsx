@@ -46,7 +46,7 @@ export default function Galeria() {
     <Box
       sx={{
         minHeight: "100vh",
-       background: "linear-gradient(to bottom, #66BDB5, #4a7c80)",
+        background: "linear-gradient(to bottom, #66BDB5, #4a7c80)",
         backgroundRepeat: "no-repeat",
         backgroundBlendMode: "overlay, normal",
         py: 4,
@@ -56,10 +56,10 @@ export default function Galeria() {
         <Container maxWidth="lg">
           <Box
             sx={{
-              maxWidth: 1100,
+              maxWidth: { xs: "90%", sm: 700, md: 900, lg: 1100 },
               mx: "auto",
               mb: 6,
-              px: 4,
+              px: { xs: 2, sm: 4 },
               py: 5,
               backgroundColor: "rgba(255, 255, 255, 0.6)",
               borderRadius: 3,
@@ -68,8 +68,9 @@ export default function Galeria() {
               position: "relative",
               zIndex: 2,
               display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
+              alignItems: "flex-start",
+              textAlign: "center",
+
             }}>
 
             <TituloPrincipal variant="h4" sx={{ mt: 2, color: '#fff' }}>
