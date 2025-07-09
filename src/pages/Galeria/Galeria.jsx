@@ -68,9 +68,8 @@ export default function Galeria() {
               position: "relative",
               zIndex: 2,
               display: "flex",
-              alignItems: "flex-start",
-              textAlign: "center",
-
+              flexDirection: "column",
+              alignItems: "center",
             }}>
 
             <TituloPrincipal variant="h4" sx={{ mt: 2, color: '#fff' }}>
