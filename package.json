@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/cache": "^11.14.0",
+    "@emotion/react": "^11.14.0",
     "@mui/icons-material": "^5.14.17",
     "@mui/material": "^5.14.17",
     "axios": "^1.6.8",
