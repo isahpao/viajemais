@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import {
-  Grid,
-  Container,
-  Box,
-} from "@mui/material";
+import { Grid, Container, Box } from "@mui/material";
 import TituloPrincipal from "../../components/TituloPrincipal";
 import Texto from "../../components/Texto";
 import CardBlog from "../../components/CardBlog";
@@ -45,30 +41,27 @@ export default function Blog() {
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
       }}>
+
       <Box
-        sx={{          
+        sx={{
           position: "relative",
           minHeight: "100vh",
           py: 4,
         }}>
-          
+
         <Box
           sx={{
             position: "absolute",
             inset: 0,
             backgroundImage: `
-            linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 15%, #93b6e5 35%,#66BDB5 40%, #093e9a 60%),
-            linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.2)), 
-            url("/images/aviao.jpg")`,
+              linear-gradient(to bottom, rgba(255,255,255,0.4), rgba(255,255,255,0.7)),
+              url("/images/aviao.jpg")`,
             backgroundRepeat: "no-repeat",
-            backgroundSize: {
-              xs: "contain",
-              sm: "cover",},
-            backgroundPosition: {
-              xs: "center bottom",
-              sm: "right top"},
-            backgroundBlendMode: "overlay, normal",
-            filter: "brightness(0.85)",
+            backgroundSize: "cover",
+            backgroundPosition: "rigth",
+            backgroundAttachment: "fixed",
+            filter: "brightness(0.95)",
+
             zIndex: 0,
           }}/>
 
@@ -94,7 +87,7 @@ export default function Blog() {
               }}>
 
               <Box sx={{ flex: 1 }}>
-                <TituloPrincipal variant="h4" sx={{ mt: 2, color: '#fff' }}>
+                <TituloPrincipal variant="h4" sx={{ mt: 2, color: "#fff" }}>
                   Uma jornada por culturas, destinos e experiências reais
                 </TituloPrincipal>
 
@@ -115,6 +108,7 @@ export default function Blog() {
                     borderRadius: 2,
                     mt: 3,
                   }}/>
+
               </Box>
 
               <Box
@@ -128,17 +122,22 @@ export default function Blog() {
                   boxShadow: 2,
                   flexShrink: 0,
                 }}/>
+
             </Box>
 
             <Grid container spacing={6} columns={{ xs: 12, lg: 12 }} p={2}>
               {posts.map((post, index) => (
-                <Grid key={index} size={{ xs: 12, sm: 6, lg: 6 }}>
+                <Grid item xs={12} sm={6} md={6} key={index}>
                   <CardBlog post={post} />
                 </Grid>
               ))}
             </Grid>
+
             <Box textAlign="center" my={4}>
-              <BotaoCarregarMais onClick={() => setPage((prev) => prev + 1)} loading={loading}>
+              <BotaoCarregarMais
+                onClick={() => setPage((prev) => prev + 1)}
+                loading={loading}>
+                  
                 Carregar mais
               </BotaoCarregarMais>
             </Box>
