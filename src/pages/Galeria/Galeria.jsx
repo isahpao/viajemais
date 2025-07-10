@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import {
-  Grid,
-  Dialog,
-  DialogContent,
-  Box,
-  Container,
-} from "@mui/material";
+import { Grid, Dialog, DialogContent, Box, Container } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
 import TituloPrincipal from "../../components/TituloPrincipal";
@@ -72,7 +66,17 @@ export default function Galeria() {
               alignItems: "center",
             }}>
 
-            <TituloPrincipal variant="h4" sx={{ mt: 2, color: '#fff' }}>
+            <TituloPrincipal
+              variant="h4"
+              sx={{
+                mt: 2,
+                color: "#fff",
+                fontSize: {
+                  xs: "1.440rem",
+                  sm: "2.125rem",
+                },
+              }}>
+
               Descubra paisagens incríveis, momentos marcantes e culturas
               fascinantes através da nossa galeria de imagens.
             </TituloPrincipal>
@@ -90,7 +94,8 @@ export default function Galeria() {
                 background: "linear-gradient(to right, #66BDB5, #4a7c80)",
                 borderRadius: 2,
                 mt: 3,
-              }}/>
+              }}
+            />
           </Box>
 
           <Grid
@@ -98,11 +103,13 @@ export default function Galeria() {
             spacing={3}
             justifyContent="center"
             sx={{ mt: 4, px: 2 }}>
+
             {imagens.slice(0, quantidadeVisivel).map((src, index) => (
               <Grid item xs={12} sm={6} md={4} key={index}>
                 <CardImagemGaleria
                   src={src}
                   onClick={() => setImagemSelecionada(src)}/>
+
               </Grid>
             ))}
           </Grid>
@@ -118,39 +125,41 @@ export default function Galeria() {
       </Box>
 
       <Dialog
-  open={!!imagemSelecionada}
-  onClose={() => setImagemSelecionada(null)}
-  fullWidth
-  maxWidth="xl">
-  <DialogContent sx={{ position: "relative", p: 0 }}>
+        open={!!imagemSelecionada}
+        onClose={() => setImagemSelecionada(null)}
+        fullWidth
+        maxWidth="xl">
 
-    <IconButton
-      onClick={() => setImagemSelecionada(null)}
-      sx={{
-        position: "absolute",
-        top: 8,
-        right: 8,
-        backgroundColor: "rgba(0,0,0,0.5)",
-        color: "white",
-        zIndex: 2,
-        "&:hover": {
-          backgroundColor: "rgba(0,0,0,0.7)",
-        },
-      }}>
-      <CloseIcon />
-    </IconButton>
+        <DialogContent sx={{ position: "relative", p: 0 }}>
+          <IconButton
+            onClick={() => setImagemSelecionada(null)}
+            sx={{
+              position: "absolute",
+              top: 8,
+              right: 8,
+              backgroundColor: "rgba(0,0,0,0.5)",
+              color: "white",
+              zIndex: 2,
+              "&:hover": {
+                backgroundColor: "rgba(0,0,0,0.7)",
+              },
+            }}
+          >
+            <CloseIcon />
+          </IconButton>
 
-    <Box
-      component="img"
-      src={imagemSelecionada}
-      alt="Zoom"
-      sx={{
-        objectFit: "cover",
-        width: "100%",
-        maxHeight: "90vh",
-      }}/>
-  </DialogContent>
-</Dialog>
+          <Box
+            component="img"
+            src={imagemSelecionada}
+            alt="Zoom"
+            sx={{
+              objectFit: "cover",
+              width: "100%",
+              maxHeight: "90vh",
+            }}/>
+            
+        </DialogContent>
+      </Dialog>
     </Box>
   );
 }
