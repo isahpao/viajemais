@@ -72,7 +72,7 @@ export default function Galeria() {
                 mt: 2,
                 color: "#fff",
                 fontSize: {
-                  xs: "1.440rem",
+                  xs: "1.8rem",
                   sm: "2.125rem",
                 },
               }}>
@@ -143,8 +143,7 @@ export default function Galeria() {
               "&:hover": {
                 backgroundColor: "rgba(0,0,0,0.7)",
               },
-            }}
-          >
+            }}>
             <CloseIcon />
           </IconButton>
 
@@ -157,7 +156,7 @@ export default function Galeria() {
               width: "100%",
               maxHeight: "90vh",
             }}/>
-            
+
         </DialogContent>
       </Dialog>
     </Box>
